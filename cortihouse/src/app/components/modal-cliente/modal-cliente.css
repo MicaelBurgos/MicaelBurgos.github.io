@@ -1,0 +1,440 @@
+/* minimal styles; Bootstrap hace lo mayor */
+/* ============================================
+   MODAL CLIENTE - ESTILOS PROFESIONALES
+   ============================================ */
+
+/* ═══════════════════════════════════════════
+   1. OVERLAY Y CONTENEDOR
+   EDITAR: Fondo del overlay
+   ═══════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* 👈 Color del fondo oscuro */
+  backdrop-filter: blur(4px); /* 👈 Efecto blur del fondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-container {
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content-custom {
+  background: white;
+  border-radius: 16px; /* 👈 Redondez de las esquinas */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); /* 👈 Sombra del modal */
+  overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════
+   2. HEADER DEL MODAL
+   EDITAR: Colores del encabezado
+   ═══════════════════════════════════════════ */
+.modal-header-custom {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); /* 👈 Degradado del header */
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Detalle decorativo */
+.modal-header-custom::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.modal-header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+
+.header-icon {
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.modal-title-custom {
+  font-size: 1.75rem; /* 👈 Tamaño del título */
+  font-weight: 800; /* 👈 Grosor del título */
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-subtitle-custom {
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0 0;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+.btn-close-custom {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-close-custom:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════════
+   3. BODY DEL MODAL
+   ═══════════════════════════════════════════ */
+.modal-body-custom {
+  padding: 2rem;
+}
+
+/* ═══════════════════════════════════════════
+   4. GRUPOS DE FORMULARIO
+   ═══════════════════════════════════════════ */
+.form-group-modal {
+  margin-bottom: 1.5rem;
+}
+
+.form-label-modal {
+  font-weight: 600;
+  color: #2d3436;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.required-indicator {
+  color: #ff6b35; /* 👈 Color del asterisco */
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+.optional-text {
+  color: #636e72;
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-left: 0.25rem;
+}
+
+/* ═══════════════════════════════════════════
+   5. INPUTS Y TEXTAREA
+   EDITAR: Colores de los inputs
+   ═══════════════════════════════════════════ */
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon-modal {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #636e72;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.textarea-icon {
+  top: 1rem;
+  transform: none;
+}
+
+.form-input-modal,
+.form-textarea-modal {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #2d3436;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-textarea-modal {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.form-input-modal:focus,
+.form-textarea-modal:focus {
+  border-color: #ff6b35; /* 👈 Color del borde al enfocar */
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1); /* 👈 Sombra al enfocar */
+  outline: none;
+}
+
+.form-input-modal:focus + .input-icon-modal,
+.form-textarea-modal:focus ~ .input-icon-modal {
+  color: #ff6b35;
+}
+
+/* Estados de validación */
+.form-input-modal.is-invalid,
+.form-textarea-modal.is-invalid {
+  border-color: #dc3545;
+}
+
+.form-input-modal.is-valid,
+.form-textarea-modal.is-valid {
+  border-color: #28a745;
+}
+
+/* ═══════════════════════════════════════════
+   6. MENSAJES DE ERROR
+   ═══════════════════════════════════════════ */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #dc3545; /* 👈 Color del mensaje de error */
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.error-message svg {
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════
+   7. RESUMEN DEL PRODUCTO
+   EDITAR: Colores del resumen
+   ═══════════════════════════════════════════ */
+.summary-box {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(247, 147, 30, 0.05) 100%);
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(255, 107, 53, 0.15);
+}
+
+.summary-header svg {
+  color: #ff6b35; /* 👈 Color del ícono */
+  flex-shrink: 0;
+}
+
+.summary-header h6 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-label {
+  color: #636e72;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.summary-value {
+  color: #2d3436;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.summary-item.highlight {
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.summary-item.highlight .summary-label {
+  color: #2d3436;
+  font-size: 1rem;
+}
+
+.summary-item.highlight .summary-value {
+  color: #ff6b35; /* 👈 Color del total */
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.summary-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 107, 53, 0.15);
+  color: #636e72;
+  font-size: 0.85rem;
+}
+
+.summary-note svg {
+  flex-shrink: 0;
+  color: #f7931e;
+}
+
+/* ═══════════════════════════════════════════
+   8. FOOTER CON BOTONES
+   EDITAR: Colores de los botones
+   ═══════════════════════════════════════════ */
+.modal-footer-custom {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f1f3f5;
+}
+
+.btn-modal-cancel,
+.btn-modal-submit {
+  flex: 1;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-modal-cancel {
+  background: #f1f3f5; /* 👈 Color del botón cancelar */
+  color: #636e72;
+}
+
+.btn-modal-cancel:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.btn-modal-submit {
+  background: linear-gradient(135deg, #2d3436 0%, #1a1d1e 100%); /* 👈 Degradado del botón enviar */
+  color: white;
+  box-shadow: 0 4px 12px rgba(45, 52, 54, 0.3);
+}
+
+.btn-modal-submit:hover:not(.disabled) {
+  background: linear-gradient(135deg, #1a1d1e 0%, #0d0f10 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 52, 54, 0.4);
+}
+.btn-modal-submit.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+/* ═══════════════════════════════════════════
+9. RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+  .modal-header-custom {
+    padding: 1.5rem;
+  }
+  .modal-title-custom {
+    font-size: 1.5rem;
+  }
+  .modal-body-custom {
+    padding: 1.5rem;
+  }
+  .modal-footer-custom {
+    flex-direction: column;
+  }
+  .btn-modal-cancel,
+  .btn-modal-submit {
+    width: 100%;
+  }
+  .summary-item.highlight .summary-value {
+    font-size: 1.25rem;
+  }
+}
+/* ═══════════════════════════════════════════
+10. SCROLL PERSONALIZADO
+═══════════════════════════════════════════ */
+.modal-container::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-container::-webkit-scrollbar-track {
+  background: #f1f3f5;
+  border-radius: 10px;
+}
+.modal-container::-webkit-scrollbar-thumb {
+  background: #ff6b35;
+  border-radius: 10px;
+}
+.modal-container::-webkit-scrollbar-thumb:hover {
+  background: #e85a2a;
+}

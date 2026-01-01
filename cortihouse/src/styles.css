@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Fondo con patrón sutil + degradado */
+  background: linear-gradient(180deg, rgba(58, 50, 72, 0.95) 0%, rgba(248, 248, 248, 0.9) 100%),
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(240, 240, 240, 0.1) 0%, transparent 20%);
+
+  background-color: #fafafa; /* Color base */
+}

@@ -1,0 +1,477 @@
+<div class="modal-overlay" *ngIf="visible" (click)="onClose()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <div class="modal-content-custom">
+      <!-- ════════════════════════════════════
+           HEADER DEL MODAL
+           ════════════════════════════════════ -->
+      <div class="modal-header-custom">
+        <div class="modal-header-content">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="header-icon"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <div>
+            <h2 class="modal-title-custom">Datos del Cliente</h2>
+            <p class="modal-subtitle-custom">Complete la información del cliente</p>
+          </div>
+        </div>
+        <button type="button" class="btn-close-custom" (click)="onClose()" aria-label="Cerrar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- ════════════════════════════════════
+           BODY DEL MODAL
+           ════════════════════════════════════ -->
+      <div class="modal-body-custom">
+        <form [formGroup]="form" (ngSubmit)="onSave()">
+          <!-- Nombre del cliente -->
+          <div class="form-group-modal">
+            <label class="form-label-modal">
+              <span class="required-indicator">*</span>
+              Nombre del Cliente
+            </label>
+            <div class="input-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="input-icon-modal"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input
+                class="form-input-modal"
+                [ngClass]="{
+                  'is-invalid': form.get('nombre')?.invalid && form.get('nombre')?.touched,
+                  'is-valid': form.get('nombre')?.valid && form.get('nombre')?.touched
+                }"
+                formControlName="nombre"
+                placeholder="Ingrese el nombre completo"
+              />
+            </div>
+            <div
+              class="error-message"
+              *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              El nombre es obligatorio
+            </div>
+          </div>
+
+          <!-- RUC y Dirección -->
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-group-modal">
+                <label class="form-label-modal">
+                  <span class="required-indicator">*</span>
+                  RUC / Cédula
+                </label>
+                <div class="input-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="input-icon-modal"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                  <input
+                    class="form-input-modal"
+                    formControlName="ruc"
+                    type="text"
+                    maxlength="13"
+                    (input)="form.get('ruc')?.setValue(form.get('ruc')?.value.replace(/[^0-9]/g, ''))"
+                    [ngClass]="{
+                      'is-invalid': form.get('ruc')?.invalid && form.get('ruc')?.touched,
+                      'is-valid': form.get('ruc')?.valid && form.get('ruc')?.touched
+                    }"
+                    placeholder="0000000000000"
+                  />
+                </div>
+                <div
+                  class="error-message"
+                  *ngIf="form.get('ruc')?.invalid && form.get('ruc')?.touched"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  Ingrese un RUC/CI válido (10-13 dígitos)
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group-modal">
+                <label class="form-label-modal">
+                  <span class="required-indicator">*</span>
+                  Dirección
+                </label>
+                <div class="input-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="input-icon-modal"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <input
+                    class="form-input-modal"
+                    formControlName="direccion"
+                    [ngClass]="{
+                      'is-invalid':
+                        form.get('direccion')?.invalid && form.get('direccion')?.touched,
+                      'is-valid': form.get('direccion')?.valid && form.get('direccion')?.touched
+                    }"
+                    placeholder="Ingrese la dirección"
+                  />
+                </div>
+                <div
+                  class="error-message"
+                  *ngIf="form.get('direccion')?.invalid && form.get('direccion')?.touched"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  La dirección es obligatoria
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Celular y Email -->
+          <div class="row g-3 mt-2">
+            <div class="col-md-6">
+              <div class="form-group-modal">
+                <label class="form-label-modal">
+                  <span class="required-indicator">*</span>
+                  Celular
+                </label>
+                <div class="input-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="input-icon-modal"
+                  >
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                  <input
+                    class="form-input-modal"
+                    formControlName="celular"
+                    type="text"
+                    maxlength="10"
+                    (input)="form.get('celular')?.setValue(form.get('celular')?.value.replace(/[^0-9]/g, ''))"
+                    [ngClass]="{
+                      'is-invalid': form.get('celular')?.invalid && form.get('celular')?.touched,
+                      'is-valid': form.get('celular')?.valid && form.get('celular')?.touched
+                    }"
+                    placeholder="0999999999"
+                  />
+                </div>
+                <div
+                  class="error-message"
+                  *ngIf="form.get('celular')?.invalid && form.get('celular')?.touched"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  Ingrese un número válido (7-10 dígitos)
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group-modal">
+                <label class="form-label-modal">
+                  <span class="required-indicator">*</span>
+                  Email
+                </label>
+                <div class="input-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="input-icon-modal"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <input
+                    class="form-input-modal"
+                    formControlName="email"
+                    type="email"
+                    [ngClass]="{
+                      'is-invalid': form.get('email')?.invalid && form.get('email')?.touched,
+                      'is-valid': form.get('email')?.valid && form.get('email')?.touched
+                    }"
+                    placeholder="correo@ejemplo.com"
+                  />
+                </div>
+                <div
+                  class="error-message"
+                  *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  Ingrese un correo válido
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Observaciones -->
+          <div class="form-group-modal mt-3">
+            <label class="form-label-modal">
+              Observaciones Generales
+              <span class="optional-text">(Opcional)</span>
+            </label>
+            <div class="input-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="input-icon-modal textarea-icon"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <textarea
+                class="form-textarea-modal"
+                rows="4"
+                formControlName="observacionesGenerales"
+                placeholder="Añade notas o comentarios adicionales..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Resumen -->
+          <div class="summary-box">
+            <div class="summary-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <h6>Resumen del Primer Producto</h6>
+            </div>
+            <div class="summary-content">
+              <div class="summary-item">
+                <span class="summary-label">Cortina:</span>
+                <span class="summary-value">{{ cortinaNombre }}</span>
+              </div>
+              <div class="summary-item highlight">
+                <span class="summary-label">Subtotal:</span>
+                <span class="summary-value">${{ subtotal.toFixed(2) }}</span>
+              </div>
+            </div>
+            <div class="summary-note">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              Podrá agregar más productos luego en el listado
+            </div>
+          </div>
+
+          <!-- Footer con botones -->
+          <div class="modal-footer-custom">
+            <button class="btn-modal-cancel" type="button" (click)="onClose()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              Cancelar
+            </button>
+            <button
+              class="btn-modal-submit"
+              [disabled]="form.invalid"
+              [class.disabled]="form.invalid"
+              type="submit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Crear Proforma
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

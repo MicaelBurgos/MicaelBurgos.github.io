@@ -1,0 +1,1066 @@
+/* ============================================
+   CORTINAS LIST - ESTILOS PROFESIONALES
+   ============================================ */
+
+/* ═══════════════════════════════════════════
+   1. PÁGINA PRINCIPAL - Fondo y contenedor
+   ═══════════════════════════════════════════ */
+body {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+}
+
+/* ═══════════════════════════════════════════
+   2. HEADER DE PÁGINA - Título principal
+   EDITAR: color, tamaño, peso del título
+   ═══════════════════════════════════════════ */
+.page-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 253, 252, 0.1);
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 2.25rem; /* 👈 Tamaño del título */
+  font-weight: 770; /* 👈 Grosor del título (300-900) */
+  color: #f4ecec; /* 👈 Color del título */
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: #c4bfbf; /* 👈 Color del subtítulo */
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   3. BOTÓN NUEVA PROFORMA
+   EDITAR: colores del botón principal
+   ═══════════════════════════════════════════ */
+.btn-nueva-proforma {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); /* 👈 Degradado del botón */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-nueva-proforma:hover {
+  background: linear-gradient(135deg, #e85a2a 0%, #e07f0f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  color: white;
+}
+
+/* ═══════════════════════════════════════════
+   4. ESTADO VACÍO
+   ═══════════════════════════════════════════ */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #636e72;
+  margin-bottom: 1.5rem;
+}
+
+/* ═══════════════════════════════════════════
+   5. CARD DE PROFORMA - Contenedor principal
+   EDITAR: sombra, bordes, fondo de la card
+═══════════════════════════════════════════ */
+.proforma-card {
+  background: white;
+  border-radius: 16px; /* 👈 Redondez de las esquinas */
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08); /* 👈 Sombra de la card */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.proforma-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+/* ═══════════════════════════════════════════
+   6. HEADER DE PROFORMA - Cabecera naranja
+   EDITAR: degradado naranja, altura, espaciado
+   ═══════════════════════════════════════════ */
+.proforma-header {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  padding: 2rem 2rem; /* 👈 Aumentado el padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem; /* 👈 Más espacio entre columnas */
+  min-height: 150px; /* 👈 Altura aumentada */
+  position: relative;
+  overflow: hidden;
+}
+
+.proforma-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Información de la proforma */
+.proforma-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 👈 Espacio entre elementos */
+}
+
+.proforma-number {
+  font-size: 1.75rem; /* 👈 Tamaño aumentado */
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem; /* 👈 Más margen inferior */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+}
+
+.proforma-date {
+  font-size: 0.95rem; /* 👈 Tamaño ligeramente mayor */
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.25rem; /* 👈 Más espacio después de la fecha */
+}
+
+/* ═══════════════════════════════════════════
+   7. INFORMACIÓN DEL CLIENTE
+   ═══════════════════════════════════════════ */
+.cliente-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 👈 Más espacio entre nombre y botón */
+  margin-bottom: 0.75rem; /* 👈 Más espacio después */
+  flex-wrap: wrap; /* 👈 Permite que se ajuste en pantallas pequeñas */
+}
+
+.cliente-nombre {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* 👈 Más espacio entre icono y texto */
+  font-size: 1.1rem; /* 👈 Tamaño aumentado */
+  font-weight: 600;
+  color: white;
+  line-height: 1.4;
+}
+
+.cliente-nombre svg {
+  flex-shrink: 0;
+  width: 18px; /* 👈 Icono más grande */
+  height: 18px;
+}
+
+.btn-icon-edit {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 0.65rem; /* 👈 Más padding */
+  border-radius: 8px; /* 👈 Más redondeado */
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  min-width: 36px; /* 👈 Tamaño mínimo */
+  min-height: 36px;
+  justify-content: center;
+}
+
+.btn-icon-edit:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.cliente-detalles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* 👈 Más espacio entre items */
+  font-size: 0.95rem; /* 👈 Tamaño aumentado */
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem; /* 👈 Espacio superior */
+}
+
+.detail-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* 👈 Más espacio entre icono y texto */
+  padding: 0.35rem 0; /* 👈 Padding vertical */
+}
+
+.detail-item svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* ═══════════════════════════════════════════
+   8. TOTAL DE PROFORMA
+   EDITAR: tamaño y color del total
+   ═══════════════════════════════════════════ */
+.proforma-total {
+  text-align: right;
+  min-width: 220px; /* 👈 Ancho mínimo aumentado */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 👈 Espacio entre elementos */
+}
+
+.total-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem; /* 👈 Más margen */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.total-amount {
+  font-size: 2rem; /* 👈 Tamaño aumentado */
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.25rem; /* 👈 Más espacio después */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════════
+   9. BOTONES DE ACCIÓN (PDF, Eliminar)
+   ═══════════════════════════════════════════ */
+.proforma-actions {
+  display: flex;
+  gap: 0.75rem; /* 👈 Más espacio entre botones */
+  justify-content: flex-end;
+  flex-wrap: wrap; /* 👈 Permite ajuste en pantallas pequeñas */
+}
+
+.btn-action {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.65rem 1.25rem; /* 👈 Más padding */
+  border-radius: 8px;
+  font-size: 0.9rem; /* 👈 Tamaño aumentado */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem; /* 👈 Más espacio entre icono y texto */
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 42px; /* 👈 Altura mínima */
+}
+
+.btn-action svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-action:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-action-delete:hover {
+  background: #dc3545;
+  border-color: #dc3545;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+/* ═══════════════════════════════════════════
+10. BODY DE PROFORMA - Contenido
+═══════════════════════════════════════════ */
+.proforma-body {
+  padding: 1.5rem;
+}
+/* ═══════════════════════════════════════════
+11. TABLA PERSONALIZADA
+EDITAR: colores de la tabla
+═══════════════════════════════════════════ */
+.table-responsive {
+  margin-bottom: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+.table-custom {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+.table-custom thead tr {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* 👈 Color del header de tabla */
+}
+.table-custom th {
+  padding: 1rem;
+  font-weight: 700; /* 👈 Grosor del texto del header */
+  color: #2d3436; /*👈 Color del texto del header */
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #ff6b35; /* 👈 Borde inferior del header */
+}
+.table-custom th:first-child {
+  border-top-left-radius: 8px;
+}
+.table-custom th:last-child {
+  border-top-right-radius: 8px;
+}
+/* Filas de items */
+.item-row {
+  transition: background-color 0.2s;
+}
+.item-row:hover {
+  background-color: rgba(255, 107, 53, 0.03); /* 👈 Color al pasar mouse por fila */
+}
+.table-custom td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f3f5;
+}
+/* ═══════════════════════════════════════════
+12. BADGES Y ETIQUETAS
+EDITAR: colores de badges
+═══════════════════════════════════════════ */
+.codigo-badge {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%); /* 👈 Color del badge de código */
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+.color-badge {
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35; /* 👈 Color del badge de color */
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+.cantidad-badge {
+  background: linear-gradient(
+    135deg,
+    #f7931e 0%,
+    #ff9f1c 100%
+  ); /* 👈 Color del badge de cantidad */
+  color: white;
+  padding: 0.35rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  min-width: 35px;
+  text-align: center;
+}
+.cantidad-badge.small {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+.item-nombre {
+  color: #2d3436;
+  font-size: 0.95rem;
+}
+.medidas {
+  color: #636e72;
+  font-weight: 500;
+}
+.item-total {
+  color: #ff6b35; /* 👈 Color del total del item */
+  font-size: 1.05rem;
+}
+/* ═══════════════════════════════════════════
+13. FILAS DE ACCESORIOS
+═══════════════════════════════════════════ */
+.accesorio-row {
+  background-color: rgba(247, 147, 30, 0.03);
+  font-size: 0.85rem;
+}
+.accesorio-row td {
+  padding: 0.75rem 1rem;
+}
+.codigo-accesorio {
+  background: rgba(108, 117, 125, 0.1);
+  color: #6c757d;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.accesorio-nombre {
+  color: #636e72;
+  font-style: italic;
+}
+.accesorio-total {
+  color: #f7931e;
+  font-weight: 600;
+}
+/* ═══════════════════════════════════════════
+14. BOTONES DE TABLA (Editar, Eliminar)
+═══════════════════════════════════════════ */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.btn-table-action {
+  background: transparent;
+  border: 1.5px solid #dee2e6;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+}
+.btn-edit {
+  color: #f7931e;
+  border-color: #f7931e;
+}
+.btn-edit:hover {
+  background: #f7931e;
+  color: white;
+  transform: scale(1.1);
+}
+.btn-delete {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-delete:hover {
+  background: #dc3545;
+  color: white;
+  transform: scale(1.1);
+}
+/* ═══════════════════════════════════════════
+15. FOOTER DE PROFORMA
+═══════════════════════════════════════════ */
+.proforma-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f1f3f5;
+  margin-top: 1rem;
+}
+.btn-add-product {
+  background: white;
+  border: 2px dashed #ff6b35;
+  color: #ff6b35;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-add-product:hover {
+  background: rgba(255, 107, 53, 0.05);
+  border-style: solid;
+  transform: translateY(-2px);
+}
+.total-final {
+  text-align: right;
+}
+.total-final-label {
+  font-size: 0.75rem;
+  color: #636e72;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.total-final-amount {
+  font-size: 1.9rem; /* 👈 Tamaño del total final */
+  font-weight: 800; /*👈 Grosor del total final */
+  color: #ff6b35; /*👈 Color del total final */
+  line-height: 1;
+}
+/* ═══════════════════════════════════════════
+16. SECCIÓN DE DESCRIPCIÓN
+═══════════════════════════════════════════ */
+.descripcion-section {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(247, 147, 30, 0.05) 0%, rgba(255, 159, 28, 0.02) 100%);
+  border: 2px solid rgba(247, 147, 30, 0.2);
+  border-radius: 12px;
+}
+.descripcion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.descripcion-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #2d3436;
+  font-size: 1rem;
+}
+.descripcion-title svg {
+  color: #f7931e;
+}
+.descripcion-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.btn-descripcion {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-save {
+  background: #28a745;
+  color: white;
+}
+.btn-save:hover {
+  background: #218838;
+}
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+}
+.btn-cancel:hover {
+  background: #5a6268;
+}
+.btn-edit {
+  background: #f7931e;
+  color: white;
+}
+.btn-edit:hover {
+  background: #e07f0f;
+}
+.descripcion-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #f7931e;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+}
+.descripcion-textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+.descripcion-text {
+  color: #2d3436;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+/* ═══════════════════════════════════════════
+17. RESUMEN FINAL
+═══════════════════════════════════════════ */
+.resumen-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.resumen-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.resumen-label {
+  font-weight: 600;
+  color: #636e72;
+  font-size: 0.95rem;
+}
+.resumen-value {
+  font-weight: 700;
+  color: #2d3436;
+  font-size: 1.25rem;
+}
+.resumen-total {
+  color: #ff6b35; /* 👈 Color del total en resumen */
+  font-size: 1.48rem;
+  font-weight: 800;
+}
+.resumen-divider {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #dee2e6, transparent);
+}
+/* ═══════════════════════════════════════════
+18. MODALES
+═══════════════════════════════════════════ */
+.modal.d-block {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+.modal-content {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+.modal-header {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  border-bottom: none;
+  padding: 1.5rem;
+  border-radius: 16px 16px 0 0;
+}
+.modal-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+.btn-close:hover {
+  opacity: 1;
+}
+.modal-body {
+  padding: 1.5rem;
+}
+.modal-footer {
+  border-top: 1px solid #f1f3f5;
+  padding: 1rem 1.5rem;
+}
+/* Botones del modal */
+.modal-footer .btn-secondary {
+  background: #6c757d;
+  border: none;
+}
+.modal-footer .btn-secondary:hover {
+  background: #5a6268;
+}
+.modal-footer .btn-success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+}
+.modal-footer .btn-success:hover {
+  background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
+}
+/* ═══════════════════════════════════════════
+19. RESPONSIVE
+═══════════════════════════════════════════ */
+/* Tablets */
+@media (max-width: 991px) {
+  .proforma-header {
+    padding: 1.75rem 1.5rem;
+    min-height: auto;
+    gap: 1.5rem;
+  }
+
+  .total-amount {
+    font-size: 2rem;
+  }
+}
+
+/* MÓVIL */
+@media (max-width: 767px) {
+  /* HEADER PROFORMA */
+  .proforma-header {
+    padding: 1.5rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .proforma-number {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .total-amount {
+    font-size: 1.75rem;
+    align-self: flex-start;
+  }
+
+  /* Botones PDF / eliminar */
+  .proforma-actions {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .btn-action {
+    flex: 1;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* RESTO DE LA PÁGINA */
+  .page-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start !important;
+  }
+
+  .btn-nueva-proforma,
+  .btn-add-product {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table-custom {
+    font-size: 0.8rem;
+  }
+
+  .table-custom th,
+  .table-custom td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .proforma-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .total-final {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 107, 53, 0.05);
+    border-radius: 8px;
+  }
+
+  .resumen-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .resumen-divider {
+    width: 100%;
+    height: 2px;
+  }
+
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+
+  .modal-lg {
+    max-width: calc(100% - 1rem);
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .proforma-number {
+    font-size: 1.2rem;
+  }
+
+  .total-amount {
+    font-size: 1.6rem;
+  }
+
+  .cliente-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+20. ANIMACIONES
+═══════════════════════════════════════════ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.proforma-card {
+  animation: fadeInUp 0.4s ease-out;
+}
+/* Touch targets mínimos */
+.btn-sm {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
+}
+/* Scroll suave en tablas */
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+}
+/* ═══════════════════════════════════════════
+   CORRECCIONES PARA MÓVIL
+   ═══════════════════════════════════════════ */
+
+/* FIX 1: Palabra "Total" en header de proforma para móvil */
+@media (max-width: 767px) {
+  .proforma-total {
+    width: 100%;
+    text-align: left;
+    min-width: auto;
+  }
+
+  .total-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .total-amount {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Asegurar que los botones de acción queden debajo */
+  .proforma-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* FIX 2: Accesorios en modal de edición para móvil */
+@media (max-width: 767px) {
+  /* Contenedor de accesorios en modal */
+  .modal-body .bg-light {
+    padding: 1rem !important;
+  }
+
+  .modal-body .bg-light .row {
+    margin: 0 !important;
+  }
+
+  .modal-body .bg-light .col-md-6 {
+    padding: 0.5rem !important;
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Card de cada accesorio */
+  .modal-body .bg-light .form-check {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Controles de cantidad de accesorios */
+  .modal-body .bg-light .d-flex.gap-1 {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 0.5rem !important;
+  }
+
+  .modal-body .bg-light .btn-outline-primary {
+    flex-shrink: 0;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.5rem;
+  }
+
+  .modal-body .bg-light .form-control-sm {
+    flex: 1;
+    min-width: 60px;
+    max-width: 80px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* Label del accesorio */
+  .modal-body .form-check-label {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+/* FIX 3: Modal de edición general en móvil */
+@media (max-width: 767px) {
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .modal-footer {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+  }
+
+  /* Inputs del modal */
+  .modal-body .form-control,
+  .modal-body .form-select {
+    font-size: 16px; /* Prevenir zoom en iOS */
+  }
+
+  /* Row dentro del modal */
+  .modal-body .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .modal-body .row > * {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* FIX 4: Mejor visualización del header en móvil pequeño */
+@media (max-width: 576px) {
+  .proforma-header {
+    padding: 1.25rem 1rem;
+  }
+
+  .proforma-info {
+    width: 100%;
+  }
+
+  .proforma-number {
+    font-size: 1.35rem;
+  }
+
+  .proforma-date {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cliente-nombre {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cliente-detalles {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Total en móvil pequeño */
+  .proforma-total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .total-amount {
+    font-size: 1.6rem;
+  }
+
+  /* Botones más grandes para touch */
+  .btn-action {
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* FIX 5: Scroll suave en modal para móvil */
+.modal-body {
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #ff6b35;
+  border-radius: 3px;
+}
+
+/* FIX 6: Asegurar que los accesorios no se desborden */
+@media (max-width: 767px) {
+  .modal-body .bg-light {
+    overflow: hidden;
+  }
+
+  .modal-body .bg-light label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* Checkbox más grande en móvil */
+  .modal-body .form-check-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.125rem;
+  }
+}

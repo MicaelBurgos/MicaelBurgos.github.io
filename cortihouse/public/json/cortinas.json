@@ -1,0 +1,57 @@
+{
+  "cortinas": [
+    {
+      "id": 1,
+      "nombre": "GAZA AFRICA R",
+      "codigoBase": "2322",
+      "codigoColor": "120104",
+      "stockMetros": 76215,
+      "anchoMaximo": 305,
+      "altoMaximo": 204,
+      "precioM2": 17.0,
+      "categoria": "Gaza",
+      "descripcion": "Tela Gaza Africa color 120104"
+    },
+    {
+      "id": 2,
+      "nombre": "VELO SUIZO PLUS",
+      "codigoBase": "23172",
+      "codigoColor": "150000",
+      "stockMetros": 65493,
+      "anchoMaximo": 300,
+      "altoMaximo": 205,
+      "precioM2": 16.0,
+      "categoria": "Velo",
+      "descripcion": "Tela Velo Suizo color 150000"
+    },
+    {
+      "id": 3,
+      "nombre": "BLACKOUT PREMIUM",
+      "codigoBase": "1100",
+      "codigoColor": "200500",
+      "stockMetros": 45000,
+      "anchoMaximo": 280,
+      "altoMaximo": 200,
+      "precioM2": 20.0,
+      "categoria": "Blackout",
+      "descripcion": "Blackout Premium color 200500"
+    }
+  ],
+  "accesorios": [
+    {
+      "codigo": "A001",
+      "nombre": "Cadena de control",
+      "precio": 3.5
+    },
+    {
+      "codigo": "A002",
+      "nombre": "Soporte de pared",
+      "precio": 2.0
+    },
+    {
+      "codigo": "A003",
+      "nombre": "Tope inferior",
+      "precio": 1.5
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+/* ============================================
+   CORTIHOUSE - TEMA NARANJA MODERNO
+   ============================================ */
+
+:root {
+  /* Colores principales */
+  --ch-primary: #ff6b35;
+  --ch-primary-dark: #e85a2a;
+  --ch-primary-light: #ff8558;
+  --ch-secondary: #f7931e;
+  --ch-accent: #ff9f1c;
+
+  /* Colores de soporte */
+  --ch-dark: #2d3436;
+  --ch-gray: #636e72;
+  --ch-light-gray: #dfe6e9;
+  --ch-bg: #f8f9fa;
+  --ch-white: #ffffff;
+
+  /* Sombras */
+  --ch-shadow-sm: 0 2px 8px rgba(255, 107, 53, 0.1);
+  --ch-shadow-md: 0 4px 16px rgba(255, 107, 53, 0.15);
+  --ch-shadow-lg: 0 8px 24px rgba(255, 107, 53, 0.2);
+
+  /* Bordes */
+  --ch-radius: 12px;
+  --ch-radius-sm: 8px;
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+body {
+  background-color: var(--ch-bg);
+  color: var(--ch-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   COLORES BOOTSTRAP PERSONALIZADOS
+   ============================================ */
+.bg-primary {
+  background-color: var(--ch-primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--ch-primary);
+  border-color: var(--ch-primary);
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--ch-primary-dark);
+  border-color: var(--ch-primary-dark);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.btn-success {
+  background-color: var(--ch-secondary);
+  border-color: var(--ch-secondary);
+}
+
+.btn-success:hover {
+  background-color: #e07f0f;
+  border-color: #e07f0f;
+  box-shadow: 0 4px 12px rgba(247, 147, 30, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-warning {
+  background-color: var(--ch-accent);
+  border-color: var(--ch-accent);
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #e68d0a;
+  border-color: #e68d0a;
+  color: white;
+}
+
+.btn-outline-primary {
+  color: var(--ch-primary);
+  border-color: var(--ch-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--ch-primary);
+  border-color: var(--ch-primary);
+  color: white;
+}
+
+.text-primary {
+  color: var(--ch-primary) !important;
+}
+
+.border-primary {
+  border-color: var(--ch-primary) !important;
+}
+
+/* ============================================
+   CARDS MODERNOS
+   ============================================ */
+.card {
+  border: none;
+  border-radius: var(--ch-radius);
+  box-shadow: var(--ch-shadow-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--ch-shadow-md);
+  transform: translateY(-4px);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--ch-primary) 0%, var(--ch-secondary) 100%);
+  border: none;
+  padding: 1.5rem;
+  min-height: 90px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.shadow-sm {
+  box-shadow: var(--ch-shadow-sm) !important;
+}
+
+/* ============================================
+   TABLAS MODERNAS
+   ============================================ */
+.table {
+  color: var(--ch-dark);
+}
+
+.table thead {
+  background: linear-gradient(135deg, var(--ch-primary-light) 0%, var(--ch-secondary) 100%);
+  color: white;
+}
+
+.table thead th {
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.75rem;
+}
+
+.table-light {
+  background-color: rgba(255, 107, 53, 0.05);
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+  border-color: var(--ch-light-gray);
+}
+
+.table-borderless tbody tr {
+  border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+.table-borderless tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--ch-radius-sm);
+}
+
+/* ============================================
+   BOTONES TOUCH-FRIENDLY
+   ============================================ */
+.btn {
+  border-radius: var(--ch-radius-sm);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+}
+
+.btn-sm {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* ============================================
+   MODALES MODERNOS
+   ============================================ */
+.modal.d-block {
+  background: rgba(45, 52, 54, 0.7);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  border: none;
+  border-radius: var(--ch-radius);
+  box-shadow: var(--ch-shadow-lg);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--ch-primary) 0%, var(--ch-secondary) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--ch-radius) var(--ch-radius) 0 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--ch-light-gray);
+  padding: 1rem 1.5rem;
+  background-color: var(--ch-bg);
+}
+
+.btn-close-white {
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================
+   FORMULARIOS MODERNOS
+   ============================================ */
+.form-control,
+.form-select {
+  border: 2px solid var(--ch-light-gray);
+  border-radius: var(--ch-radius-sm);
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--ch-primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.15);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--ch-dark);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   ALERTS MODERNOS
+   ============================================ */
+.alert {
+  border: none;
+  border-radius: var(--ch-radius-sm);
+  border-left: 4px solid;
+}
+
+.alert-info {
+  background-color: rgba(255, 107, 53, 0.1);
+  border-left-color: var(--ch-primary);
+  color: var(--ch-dark);
+}
+
+.alert-success {
+  background-color: rgba(247, 147, 30, 0.1);
+  border-left-color: var(--ch-secondary);
+  color: var(--ch-dark);
+}
+
+.alert-warning {
+  background-color: rgba(255, 159, 28, 0.1);
+  border-left-color: var(--ch-accent);
+  color: var(--ch-dark);
+}
+
+/* ============================================
+   BADGES MODERNOS
+   ============================================ */
+.badge {
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+}
+
+.bg-info {
+  background-color: var(--ch-primary) !important;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  box-shadow: var(--ch-shadow-sm);
+  background: linear-gradient(135deg, var(--ch-primary) 0%, var(--ch-secondary) 100%) !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   SPINNERS
+   ============================================ */
+.spinner-border {
+  color: var(--ch-primary);
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+.bg-light {
+  background-color: rgba(255, 107, 53, 0.05) !important;
+}
+
+.bg-warning.bg-opacity-10 {
+  background-color: rgba(255, 159, 28, 0.1) !important;
+}
+
+.text-muted {
+  color: var(--ch-gray) !important;
+}
+
+.fw-semibold {
+  font-weight: 600 !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 767px) {
+  .card {
+    border-radius: var(--ch-radius);
+    margin-bottom: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .d-grid {
+    display: grid !important;
+  }
+
+  .card-header {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+
+  .modal-lg {
+    max-width: calc(100% - 1rem);
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADO
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ch-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ch-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ch-primary-dark);
+}
